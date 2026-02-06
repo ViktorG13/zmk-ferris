@@ -1,0 +1,6 @@
+if SHIELD_CENTRAL
+
+config ZMK_KEYBOARD_NAME
+    default "central"
+
+endif
