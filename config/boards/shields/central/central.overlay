@@ -8,21 +8,24 @@
 
     default_kscan: kscan {
         compatible = "zmk,kscan-gpio-matrix";
-        label = "default_kscan";
         diode-direction = "col2row";
 
-        row-gpios = <&pro_micro 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, // ROW 0 P0.24
-                    <&pro_micro 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, // ROW 1 P1.00
+        row-gpios = <
+            &gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)
+            &gpio1 0  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)
+        >;
 
-        col-gpios = <&pro_micro 16 GPIO_ACTIVE_HIGH>, // COL 0 P0.10
-                    <&pro_micro 7 GPIO_ACTIVE_HIGH>, // COL 1 P0.11
-        
+        col-gpios = <
+            &gpio0 10 GPIO_ACTIVE_HIGH
+            &gpio0 11 GPIO_ACTIVE_HIGH
+        >;
     };
 
-    default_trasnform: matrix_transform {
+    default_transform: matrix_transform {
         compatible = "zmk,matrix-transform";
-        row = <2>;
-        col = <2>;
+        rows = <2>;
+        columns = <2>;
+
         map = <
             RC(0,0) RC(0,1)
             RC(1,0) RC(1,1)
