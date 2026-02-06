@@ -14,8 +14,8 @@
         row-gpios = <&gpio0 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, // ROW 0 P0.24
                     <&gpio1 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, // ROW 1 P1.00
 
-        col-gpios = <&gpio1 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, // COL 0 P0.10
-                    <&gpio1 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, // COL 1 P0.11
+        col-gpios = <&gpio1 16 GPIO_ACTIVE_HIGH>, // COL 0 P0.10
+                    <&gpio1 7 GPIO_ACTIVE_HIGH>, // COL 1 P0.11
         
     };
 
